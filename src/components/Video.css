@@ -1,0 +1,54 @@
+.container{
+    width: 15em;
+    margin: 0 0.2em;
+    margin-bottom: 1em;
+    float: left;
+    position: relative;
+}
+
+.pic{
+    width: 100%;
+}
+
+.title{
+    font-weight: bold;
+    margin-bottom: 0.3em;
+    color: white;
+}
+
+.channel , .views{
+    font-size: small;
+    color: #ccc;
+    margin-bottom: 0.2em;
+}
+
+.views span{
+    padding: 0 0.5em;
+}
+
+button{
+    background-color: black;
+    border: 1px solid yellow;
+    padding: 0.3em 0.7em;
+    border-radius: 1em;
+    color: wheat;
+    cursor: pointer;
+    width: fit-content;
+    height: auto;
+    clear: both;
+    -webkit-border-radius: 1em;
+    -moz-border-radius: 1em;
+    -ms-border-radius: 1em;
+    -o-border-radius: 1em;
+}
+
+.close {
+    position: absolute;
+    right:0;
+}
+
+.edit{
+    position: absolute;
+    right: 3em;
+}
+

@@ -1,0 +1,17 @@
+.button{
+    background-color: black;
+    border: 1px solid yellow;
+    margin-top: 0.2em;
+    padding: 0.5em 1em;
+    border-radius: 1em;
+    color: wheat;
+    cursor: pointer;
+    width: fit-content;
+    height: auto;
+    clear: both;
+}
+
+.button:hover{
+    background-color: grey;
+    color: white;
+}
