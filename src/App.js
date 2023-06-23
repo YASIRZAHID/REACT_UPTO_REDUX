@@ -26,11 +26,11 @@ function App() {
     }
   }
 
-  const themeContext = useContext(ThemeContext)
+  // const themeContext = useContext(ThemeContext)
 
   // const [ video, setVideo ] = useState(videosDB);
   const [editableVideo,SetEditableVideo]=useState(null);
-
+  const [mode,SetMode] = useState('darkmode')
   // function videoAdder(video){
   //   dispatch({type:'ADD',payload:video});
   //   //action : {type:'Add',payload:video}
@@ -57,8 +57,10 @@ function App() {
 
   return (
     <>
-      <section className={`App ${themeContext}`}  onClick={()=>console.log("app")}>
+      <section className={`App ${mode}`}  >
         {/* <ThemeContext></ThemeContext> */}
+      <ThemeContext.Provider value={mode}>
+        <button className={`button ${mode}`} onClick={()=>SetMode(mode === 'darkmode'?'lightmode':'darkmode')}>THEME</button>
         <AddVideo SetEditableVideo={SetEditableVideo} dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
         {/* <div>
           <button className="button" onClick={()=>{
@@ -72,6 +74,7 @@ function App() {
           }}>ADD VIDEO</button>
         </div> */}
         <VideoList updateVideo={updateVideo} dispatch={dispatch} video={video}></VideoList>
+      </ThemeContext.Provider>
 
       </section>
     </>
