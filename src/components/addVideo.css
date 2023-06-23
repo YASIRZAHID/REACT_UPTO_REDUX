@@ -3,3 +3,24 @@ input{
     padding: 1rem;
     margin-bottom: 10px; ;
 }
+
+.button.lightmode:hover{
+    background-color: rgb(115, 115, 115);
+  }
+
+  .button.darkmode:hover{
+    background-color: grey;
+  }
+
+  .button.lightmode{
+    background-color: black;
+    border: 1px solid yellow;
+    color: wheat;
+  }
+
+  .button.darkmode{
+    background-color: #bbb;
+    border: 1px solid yellow;
+    color: black;
+  }
+  

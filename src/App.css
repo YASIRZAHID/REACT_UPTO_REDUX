@@ -8,3 +8,37 @@
 .darkmode{
   background-color: #333;
 }
+.lightmode{
+  background-color: #888;
+}
+
+
+.button{
+  margin-top: 0.2em;
+  padding: 0.5em 1em;
+  border-radius: 1em;
+  cursor: pointer;
+  width: fit-content;
+  height: auto;
+  clear: both;
+}
+
+.button.lightmode:hover{
+  background-color: rgb(115, 115, 115);
+}
+
+.button.darkmode:hover{
+  background-color: grey;
+}
+
+.button.lightmode{
+  background-color: black;
+  border: 1px solid yellow;
+  color: wheat;
+}
+
+.button.darkmode{
+  background-color: #bbb;
+  border: 1px solid yellow;
+  color: black;
+}

@@ -1,5 +1,6 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./addVideo.css";
+import ThemeContext from "../context/ThemeContent";
 
 const initialState = {
   channel: "Coder Dost",
@@ -15,6 +16,7 @@ export default function AddVideo({
   SetEditableVideo,
 }) {
   const [video, SetVideo] = useState(initialState);
+  const theme = useContext(ThemeContext);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,7 +59,7 @@ export default function AddVideo({
         placeholder="Views"
         value={video.views}
       />
-      <button className="button" onClick={handleSubmit}>
+      <button className={`button ${theme}`} onClick={handleSubmit}>
         {editableVideo ? "Edit" : "Add"} VIDEO
       </button>
     </form>
