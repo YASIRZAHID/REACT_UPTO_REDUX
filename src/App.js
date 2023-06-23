@@ -1,8 +1,9 @@
-import { useReducer, useState } from "react";
+import { useContext, useReducer, useState } from "react";
 import "./App.css";
 import videosDB from "./data/data";
 import AddVideo from "./components/addVideo";
 import VideoList from "./components/videoList";
+import ThemeContext from "./context/ThemeContent";
 
 function App() {
   const [video,dispatch] = useReducer(videoReducer,videosDB)
@@ -24,6 +25,8 @@ function App() {
         return video
     }
   }
+
+  const themeContext = useContext(ThemeContext)
 
   // const [ video, setVideo ] = useState(videosDB);
   const [editableVideo,SetEditableVideo]=useState(null);
@@ -54,7 +57,8 @@ function App() {
 
   return (
     <>
-      <section className="App"  onClick={()=>console.log("app")}>
+      <section className={`App ${themeContext}`}  onClick={()=>console.log("app")}>
+        {/* <ThemeContext></ThemeContext> */}
         <AddVideo SetEditableVideo={SetEditableVideo} dispatch={dispatch} editableVideo={editableVideo}></AddVideo>
         {/* <div>
           <button className="button" onClick={()=>{
