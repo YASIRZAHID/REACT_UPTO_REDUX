@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import "./Video.css";
 import ThemeContext from "../context/ThemeContent";
+import useVideoDispatch from "../hooks/VideosDispatch";
+// import VideoDispatchContext from "../context/VideoDispatchContext.js";
 export default function Video({
   id = 1,
   title = "",
@@ -9,11 +11,11 @@ export default function Video({
   time = "",
   verified = false,
   children,
-  dispatch,
   updateVideo
 }) {
   const theme = useContext(ThemeContext)
-
+  // const dispatch = useContext(VideoDispatchContext)
+  const dispatch = useContext(useVideoDispatch)
   return (
     <div className={`container ${theme}`}>
       <button  onClick={()=>dispatch({type:'DELETE',payload:id})} className={`close button ${theme}`}>X</button>

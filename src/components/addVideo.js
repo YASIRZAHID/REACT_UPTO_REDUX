@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from "react";
 import "./addVideo.css";
 import ThemeContext from "../context/ThemeContent";
+import useVideoDispatch from "../hooks/VideosDispatch";
+// import VideoDispatchContext from "../context/VideoDispatchContext.js";
 
 const initialState = {
   channel: "Coder Dost",
@@ -11,12 +13,14 @@ const initialState = {
 };
 
 export default function AddVideo({
-  dispatch,
+  // dispatch,
   editableVideo,
   SetEditableVideo,
 }) {
   const [video, SetVideo] = useState(initialState);
   const theme = useContext(ThemeContext);
+  // const dispatch=useContext(VideoDispatchContext)
+  const dispatch=useVideoDispatch()
 
   function handleSubmit(e) {
     e.preventDefault();
