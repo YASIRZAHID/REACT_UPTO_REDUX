@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import "./addVideo.css";
 import ThemeContext from "../context/ThemeContent";
 import useVideoDispatch from "../hooks/VideosDispatch";
@@ -20,7 +20,8 @@ export default function AddVideo({
   const [video, SetVideo] = useState(initialState);
   const theme = useContext(ThemeContext);
   // const dispatch=useContext(VideoDispatchContext)
-  const dispatch=useVideoDispatch()
+  const dispatch= useVideoDispatch()
+  const inputRef = useRef(null);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -45,11 +46,22 @@ export default function AddVideo({
     if (editableVideo) {
       SetVideo(editableVideo);
     }
+    // inputRef.current.value='your name here';//this tyoes in a value
+    inputRef.current.focus();// this brings cursor to end of typed value
+    inputRef.current.placeholder=""
+    "TYPE HERE".split('').forEach((char,i)=>{
+      setTimeout(()=>{
+        // inputRef.current.value=inputRef.current.value + char
+        inputRef.current.placeholder=inputRef.current.placeholder + char
+      },100*i)
+    })
+
   }, [editableVideo]);
 
   return (
     <form>
       <input
+        ref={inputRef}
         type="text"
         name="title"
         onChange={handleChange}

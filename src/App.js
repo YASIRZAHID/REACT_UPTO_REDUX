@@ -6,6 +6,7 @@ import VideoList from "./components/videoList";
 import ThemeContext from "./context/ThemeContent";
 import VideosContext from "./context/VideosContext";
 import VideoDispatchContext from "./context/VideoDispatchContext";
+import Counter from "./components/counter";
 
 function App() {
   const [video, dispatch] = useReducer(videoReducer, videosDB);
@@ -71,7 +72,7 @@ function App() {
             >
             THEME
           </button>
-
+            {/* <Counter/>//contains example of implementation of updater function and useRef hook */}
           <AddVideo
             SetEditableVideo={SetEditableVideo}
             // dispatch={dispatch}
